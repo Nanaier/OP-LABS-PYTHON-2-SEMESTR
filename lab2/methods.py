@@ -6,7 +6,7 @@ def nameoffile():
     return name
 
 
-def isInBase(TeleProg:dict, base:list):
+def isInBase(TeleProg: dict, base: list):
     for prog in base:
         startTime = TeleProg["startTimeHours"]*60 + TeleProg["startTimeMinutes"]
         startTime1 = prog["startTimeHours"]*60 + prog["startTimeMinutes"]
@@ -30,17 +30,15 @@ def get_input(name):
     mode = input("Would you like to append your input? If so, enter a. Otherwise enter w:")
     while True:
         if mode == 'a':
+            with open(name, "rb") as file:
+                list = pickle.load(file)
             break
         if mode == 'w':
-            file = open(name, "wb").close()
+            with open(name, "wb") as file:
+                file.truncate()
             break
         while mode != 'a' and mode != 'w':
             mode = input('Enter correct letter:')
-    try:
-       with open(name, "rb") as file:
-            list = pickle.load(file)
-    except:
-        pass
     with open(name, "wb") as file:
         print("Enter the input data as [name h:m h:m]\n To end the line | press ---> ENTER\n To end the input | press ---> ENTER twice\n")
         line = input().split()
