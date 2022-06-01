@@ -1,20 +1,20 @@
-from classes import *
+from Work_with_numbers import *
 
 m = int(input("Enter the amount of binary numbers m: "))
 
 down = int(input("Enter down limit for generated numbers: "))
 up = int(input("Enter up limit for generated numbers: "))
 
-BinaryArr = GenarateRandomBinNumbers(m, up, down)
+BinaryArr = GenerateRandomBinNumbers(m, up, down)
 print("\nRandomly generated binary numbers:")
 PrintArray(BinaryArr)
 
-n = int(input("Enter the amount of hex numbers m: "))
+n = int(input("Enter the amount of hex numbers n: "))
 
 down = int(input("Enter down limit for generated numbers: "))
 up = int(input("Enter up limit for generated numbers: "))
 
-HexArr = GenarateRandomHexNumbers(n, up, down)
+HexArr = GenerateRandomHexNumbers(n, up, down)
 print("\nRandomly generated hex numbers:")
 PrintArray(HexArr)
 
